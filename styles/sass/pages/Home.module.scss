@@ -1,0 +1,100 @@
+@use '../abstracts/colors';
+@use '../abstracts/variables';
+@use '../components/popup';
+
+.header {
+	position: sticky;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 16rem;
+}
+
+.cartIconContainer {
+	& ion-icon {
+		cursor: pointer;
+		font-size: 2.4rem;
+	}
+}
+
+.logo {
+	margin-right: auto;
+
+	&Text {
+		margin-left: 1rem;
+	}
+	&Container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		&:hover {
+			color: colors.$color-primary;
+		}
+	}
+}
+
+.mainNavList {
+	display: flex;
+	flex-direction: row;
+	width: auto;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.4rem;
+	gap: 4rem;
+	margin: 4rem 0;
+	letter-spacing: 0.1rem;
+
+	&Item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		& ion-icon {
+			transition: all 0.3s ease-out;
+		}
+		&:hover {
+			color: colors.$color-primary;
+			& ion-icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+/* .popup {
+	background-color: rgba(colors.$color-black, 0.6);
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+
+	&Content {
+		
+		width: 75%;
+		height: 50rem;
+		margin: 0 auto;
+		background-color: white;
+		box-shadow: 0 2rem 4rem rgba(colors.$color-black, 0.2);
+		opacity: 0;
+		transform: translate(-50%, -50%) translateY(-500px);
+		transition: all 0.3s;
+	}
+
+	&Show {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	//style the target's child
+	&:target &__content {
+		opacity: 1;
+		transform: translate(-50%, -50%) translateY(0);
+	}
+} */
