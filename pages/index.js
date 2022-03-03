@@ -28,21 +28,24 @@ export default function Home() {
       </Head>
 
       <header className={styles.header}>
-        <Link href="#" className={styles.logo}>
-          <span className={styles.logoContainer}>
-            <Image
-              src="/img/garai-logo.png"
-              alt="Garai Pince logo"
-              width="20"
-              height="30"
-            />
-            <span className={styles.logoText}>
-              GARAI PINCE
-            </span>
-          </span>
-        </Link>
 
-        <nav className="main-nav">
+        <span className={styles.logoContainer}>
+          <Link href="/">
+            <>
+              <Image
+                src="/img/garai-logo.png"
+                alt="Garai Pince logo"
+                width="20"
+                height="30"
+              />
+              <span className={styles.logoText}>
+                GARAI PINCE
+              </span>
+            </>
+          </Link>
+        </span>
+
+        <nav className={styles.mainNav}>
           <ul className={styles.mainNavList}>
             <li className={styles.mainNavListItem}><Link href="">KEZDŐLAP</Link></li>
             <li className={styles.mainNavListItem}><Link href="">BORAINK</Link></li>
@@ -50,14 +53,39 @@ export default function Home() {
             <li className={styles.mainNavListItem}>RÓLUNK<ion-icon name="chevron-down-outline"></ion-icon></li>
           </ul>
         </nav>
+
         <span className={styles.cartIconContainer} onClick={openPopup}>
           <ion-icon name="bag-outline"></ion-icon>
         </span>
       </header>
 
       <main>
-        {/* <section className={styles.sectionHero}>
-          <div class="hero">
+        <section className={styles.sectionHero}>
+          <div className={styles.hero}>
+            <div className={styles.heroText}>
+              <h1 className={styles.heroTitle}>
+                GARAI PINCE
+              </h1>
+              <p className={styles.heroDescription}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, sit!
+                Fugit libero dolorum, cupiditate ullam odio itaque perspiciatis ut tempore est porro pariatur alias quibusdam beatae voluptas voluptate. Vero, nemo.
+              </p>
+              <button className={styles.heroBtn}>
+                GOMB
+              </button>
+            </div>
+            <div className={styles.heroImgBox}>
+              <Image
+                src="/img/hero-wine.jpeg"
+                className={styles.heroImg}
+                width={800}
+                height={600}
+                alt="Woman enjoying food, meals in storage container, and food bowls on a table"
+              />
+            </div>
+
+          </div>
+          {/* <div class="hero">
             <div class="hero-text-box">
               <h1 class="heading-primary">
                 A healthy meal delivered to your door, every single day
@@ -92,8 +120,8 @@ export default function Home() {
                 alt="Woman enjoying food, meals in storage container, and food bowls on a table"
               />
             </div>
-          </div>
-        </section> */}
+          </div> */}
+        </section>
       </main>
       <div className={styles.popup} id="popup">
         <div className={styles.popupContent} id="popupContent">
