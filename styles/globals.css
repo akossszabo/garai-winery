@@ -27,11 +27,8 @@ Large: 1.8
 
 --- 02 COLORS
 
-- Primary: #e67e22
+- Primary:
 - Tints:
-#fdf2e9
-#fae5d3
-#eb984e
 
 - Shades: 
 #cf711f
@@ -74,6 +71,7 @@ html {
 
 body {
 	box-sizing: border-box;
+	color: #444;
 }
 
 ion-icon {

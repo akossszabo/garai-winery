@@ -1,6 +1,9 @@
 @use '../abstracts/colors';
 @use '../abstracts/variables';
 @use '../components/popup';
+@use '../base/typography';
+@use '../base/animations';
+@use '../base/utilities';
 
 .header {
 	position: sticky;
@@ -32,6 +35,8 @@
 }
 
 .mainNav {
+	color: colors.$color-grey-dark;
+
 	&List {
 		display: flex;
 		flex-direction: row;
@@ -79,37 +84,89 @@
 }
 .sectionHero {
 	margin: 8rem 0;
+	/* height: 70vh; */
 }
+
+@media (max-width: 34em) {
+	.hero {
+		grid-auto-flow: column;
+	}
+}
+
 .hero {
 	display: grid;
 	grid-template-columns: 40% 40%;
 	justify-content: center;
-
+	grid-auto-flow: column;
+	gap: 8rem;
+	&Text {
+		display: flex;
+		flex-direction: column;
+		gap: 8rem;
+	}
 	&Img {
-		border-radius: 0.8rem;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			transform: scale(1.1);
+		}
 		&Box {
+			/* border-radius: 0.8rem; */
+			position: relative;
+			overflow: hidden;
 			display: flex;
 			justify-content: flex-end;
 		}
 	}
-
-	&Description {
-		font-size: 1.8rem;
-		margin: 8rem 0;
-	}
-
 	&Btn {
-		display: inline-block;
-		font-size: 1.6rem;
-		padding: 2rem 4rem;
-		background-color: colors.$color-primary;
-		color: colors.$color-white;
+		&:link,
+		&:visited {
+			display: inline-block;
+			font-size: 1.6rem;
+			padding: 2rem 4rem;
+			background-color: colors.$color-primary;
+			color: colors.$color-white;
+			cursor: pointer;
+			letter-spacing: 0.3rem;
+			animation: moveInBottom 1s ease-out;
+			transition: all 0.3s;
+		}
+		&:active {
+			box-shadow: 0 0.5rem 1rem rgba(colors.$color-black, 0.15);
+			transform: translateY(5px);
+		}
+		&:hover {
+			transform: translateY(-5px);
+			background-color: colors.$color-primary-dark;
+			box-shadow: 0 1rem 2rem rgba(colors.$color-black, 0.15);
+		}
+		&Cnt {
+			display: flex;
+		}
 	}
+}
 
-	&Title {
-		font-size: 6.4rem;
-		font-weight: 300;
-		letter-spacing: 1rem;
+.sectionServices {
+	margin: 16rem 0;
+}
+
+.services {
+	display: grid;
+	grid-template-columns: repeat(4, 20%);
+	justify-content: center;
+	align-items: center;
+	&Item {
+		justify-self: center;
+		align-self: center;
+		border: 1px solid;
 	}
+}
 
+.lineAccent {
+	width: 7rem;
+	min-height: 0.2rem;
+	background-color: #c9a969;
+
+	&Large {
+		width: 10rem;
+	}
 }

@@ -37,6 +37,7 @@ export default function Home() {
                 alt="Garai Pince logo"
                 width="20"
                 height="30"
+                priority
               />
               <span className={styles.logoText}>
                 GARAI PINCE
@@ -50,6 +51,7 @@ export default function Home() {
             <li className={styles.mainNavListItem}><Link href="">KEZDŐLAP</Link></li>
             <li className={styles.mainNavListItem}><Link href="">BORAINK</Link></li>
             <li className={styles.mainNavListItem}><Link href="">KAPCSOLAT</Link></li>
+            <li className={styles.mainNavListItem}><Link href="">BLOG</Link></li>
             <li className={styles.mainNavListItem}>RÓLUNK<ion-icon name="chevron-down-outline"></ion-icon></li>
           </ul>
         </nav>
@@ -63,64 +65,56 @@ export default function Home() {
         <section className={styles.sectionHero}>
           <div className={styles.hero}>
             <div className={styles.heroText}>
-              <h1 className={styles.heroTitle}>
+              <div className={[styles.lineAccent, styles.lineAccentLarge].join(' ')}></div>
+              <h1 className={styles.headingPrimary}>
                 GARAI PINCE
               </h1>
-              <p className={styles.heroDescription}>
+              <p className={styles.headingPrimarySub}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, sit!
                 Fugit libero dolorum, cupiditate ullam odio itaque perspiciatis ut tempore est porro pariatur alias quibusdam beatae voluptas voluptate. Vero, nemo.
               </p>
-              <button className={styles.heroBtn}>
-                GOMB
-              </button>
+              <div className={styles.heroBtnCnt}>
+                <Link href="/termekek">
+                  <a className={styles.heroBtn}>
+                    TERMÉKEINK
+                  </a>
+                </Link>
+              </div>
             </div>
             <div className={styles.heroImgBox}>
               <Image
                 src="/img/hero-wine.jpeg"
                 className={styles.heroImg}
-                width={800}
-                height={600}
+                /* width={800}
+                height={600} */
+                sizes='70vw'
+                layout="fill"
                 alt="Woman enjoying food, meals in storage container, and food bowls on a table"
               />
             </div>
 
           </div>
-          {/* <div class="hero">
-            <div class="hero-text-box">
-              <h1 class="heading-primary">
-                A healthy meal delivered to your door, every single day
-              </h1>
-              <p class="hero-description">
-                The smart 365-days-per-year food subscription that will make you
-                eat healthy again. Tailored to your personal tastes and
-                nutritional needs.
-              </p>
-              <a href="#" class="btn btn--full margin-right-sm"
-              >Start eating well</a
-              >
-              <a href="#" class="btn btn--outline">Learn more &darr;</a>
-              <div class="delivered-meals">
-                <div class="delivered-imgs">
-                  <img src="img/customers/customer-1.jpg" alt="Customer photo" />
-                  <img src="img/customers/customer-2.jpg" alt="Customer photo" />
-                  <img src="img/customers/customer-3.jpg" alt="Customer photo" />
-                  <img src="img/customers/customer-4.jpg" alt="Customer photo" />
-                  <img src="img/customers/customer-5.jpg" alt="Customer photo" />
-                  <img src="img/customers/customer-6.jpg" alt="Customer photo" />
-                </div>
-                <p class="delivered-text">
-                  <span>250,000+</span> meals delivered last year!
-                </p>
-              </div>
+        </section>
+        <section className={styles.sectionServices}>
+          <div className={['text-center', 'mb-32'].join(' ')}>
+            <h2 className={styles.headingSecondary}>
+              Fedezd fel élményeinket
+            </h2>
+          </div>
+          <div className={styles.services}>
+            <div className={styles.servicesItem}>
+              CARD1
             </div>
-            <div class="hero-img-box">
-              <img
-                src="img/hero.png"
-                class="hero-img"
-                alt="Woman enjoying food, meals in storage container, and food bowls on a table"
-              />
+            <div className={styles.servicesItem}>
+              CARD2
             </div>
-          </div> */}
+            <div className={styles.servicesItem}>
+              CARD3
+            </div>
+            <div className={styles.servicesItem}>
+              CARD4
+            </div>
+          </div>
         </section>
       </main>
       <div className={styles.popup} id="popup">
