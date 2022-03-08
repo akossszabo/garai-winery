@@ -31,6 +31,7 @@
 		opacity: 0;
 		transform: translate(-50%, -50%) translateY(-500px);
 		transition: all 0.3s;
+		
 		&Show {
 			opacity: 1;
 			transform: translate(-50%, -50%) translateY(0);

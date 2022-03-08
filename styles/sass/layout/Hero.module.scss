@@ -1,0 +1,30 @@
+@use '../abstracts/colors';
+@use '../base/typography';
+@use '../base/animations';
+@use '../base/utilities';
+@use '../components/button';
+
+.hero {
+	display: grid;
+	grid-template-columns: 40% 40%;
+	justify-content: center;
+	grid-auto-flow: column;
+	gap: 8rem;
+	&Text {
+		display: flex;
+		flex-direction: column;
+		gap: 8rem;
+	}
+	&Img {
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			transform: scale(1.1);
+		}
+		&Box {
+			position: relative;
+			overflow: hidden;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}

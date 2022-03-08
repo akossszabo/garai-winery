@@ -1,0 +1,45 @@
+@use '../abstracts/colors';
+
+.header {
+	position: sticky;
+	display: grid;
+	grid-template-columns: 10% 80% 10%;
+	justify-content: center;
+	align-items: center;
+	margin: 0 16rem;
+	padding: 3.2rem 0;
+}
+
+.logo {
+	&Text {
+		margin-left: 1rem;
+		font-size: 1.4rem;
+	}
+	&Container {
+		display: flex;
+		flex-grow: 1;
+		flex-basis: 0;
+		justify-content: flex-start;
+		align-items: center;
+		cursor: pointer;
+		transition: all 0.3s;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.cartIconContainer {
+	display: flex;
+	justify-content: flex-end;
+
+	& ion-icon {
+		transition: all 0.3s;
+		cursor: pointer;
+		font-size: 2.4rem;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}

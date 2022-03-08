@@ -1,0 +1,35 @@
+@use '../abstracts/colors';
+
+.mainNav {
+	color: colors.$color-grey-dark;
+
+	&List {
+		display: flex;
+		flex-direction: row;
+		width: auto;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.4rem;
+		gap: 4rem;
+		letter-spacing: 0.1rem;
+
+		&Item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+
+			& ion-icon {
+				transition: all 0.3s ease-out;
+			}
+
+			&:hover {
+				color: colors.$color-primary;
+
+				& ion-icon {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}

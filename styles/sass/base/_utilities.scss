@@ -1,3 +1,5 @@
+@use '../base/animations';
+
 .centerText {
 	text-align: center;
 }
@@ -9,4 +11,16 @@
 }
 .marginBottomSmall {
 	margin-bottom: 1.5rem;
+}
+
+.lineAccent {
+	width: 7rem;
+	min-height: 0.2rem;
+	background-color: #c9a969;
+	display: inline-block;
+	&Large {
+		width: 10rem;
+	}
+	animation: growInLeft 1s ease-in;
+
 }

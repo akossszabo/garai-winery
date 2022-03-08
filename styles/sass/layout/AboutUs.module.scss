@@ -1,0 +1,44 @@
+@use '../abstracts/colors';
+@use '../base/typography';
+@use '../base/animations';
+@use '../base/utilities';
+@use '../components/button';
+.aboutUs {
+	display: flex;
+	justify-content: center;
+	background-color: colors.$color-background-dark;
+	color: #fff;
+	&Description {
+		display: flex;
+		flex-direction: column;
+		padding: 8rem;
+		width: 40%;
+		max-width: 500px;
+		gap: 2rem;
+	}
+	&Composition {
+		position: relative;
+		width: 40%;
+		max-width: 500px;
+		animation: scaleIn 1s backwards;
+		&Img {
+			position: absolute;
+			transition: all 0.3s ease-in;
+			&Front {
+				top: 8rem;
+				right: 0;
+				z-index: 2;
+			}
+			&Back {
+				top: 16rem;
+				left: 4rem;
+			}
+			&:hover {
+				/* outline: 1.5rem solid colors.$color-primary; */
+				transform: scale(1.05) translateY(-0.5rem);
+				box-shadow: 0 2.5rem 4rem rgba(colors.$color-black, 0.5);
+				z-index: 20;
+			}
+		}
+	}
+}

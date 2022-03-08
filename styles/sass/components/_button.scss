@@ -1,0 +1,54 @@
+@use '../abstracts/colors';
+@use '../base/animations';
+
+.btnCnt{
+	display: flex;
+}
+.btnPrimary {
+	&:link,
+	&:visited {
+		display: inline-block;
+		font-size: 1.6rem;
+		padding: 2rem 4rem;
+		background-color: colors.$color-primary;
+		color: colors.$color-white;
+		cursor: pointer;
+		letter-spacing: 0.3rem;
+		animation: moveInBottom 1s ease-out;
+		transition: all 0.3s;
+	}
+	&:active {
+		box-shadow: 0 0.5rem 1rem rgba(colors.$color-black, 0.15);
+		transform: translateY(5px);
+	}
+	&:hover {
+		transform: translateY(-5px);
+		background-color: colors.$color-primary-dark;
+		box-shadow: 0 1rem 2rem rgba(colors.$color-black, 0.15);
+	}
+}
+
+.btnSecondary {
+	&:link,
+	&:visited {
+		display: inline-block;
+		font-size: 1.6rem;
+		padding: 2rem 4rem;
+		background-color: transparent;
+		color: colors.$color-white;
+		cursor: pointer;
+		letter-spacing: 0.3rem;
+		animation: moveInBottom 1s ease-out;
+		transition: all 0.3s;
+		border: 1px solid colors.$color-white; 
+	}
+	&:active {
+		box-shadow: 0 0.5rem 1rem rgba(colors.$color-black, 0.15);
+		transform: translateY(5px);
+	}
+	&:hover {
+		transform: translateY(-5px);
+		border: 1px solid colors.$color-primary; 
+		color:  colors.$color-primary;
+	}
+}
