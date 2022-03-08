@@ -8,11 +8,6 @@ export default function Products() {
     const [products, setProducts] = useState(allProduct);
 
     useEffect(() => {
-        const allButton = document.querySelector('.allButton');
-        allButton.focus();
-    }, []);
-
-    useEffect(() => {
         const abortCont = new AbortController();
         console.log(activeTab);
         activeTab == 'all' ? setProducts(allProduct) : setProducts(allProduct.filter(p => p.type == activeTab));
