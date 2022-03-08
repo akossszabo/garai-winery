@@ -1,7 +1,7 @@
 @use '../abstracts/colors';
 @use '../base/animations';
 
-.btnCnt{
+.btnCnt {
 	display: flex;
 }
 .btnPrimary {
@@ -29,6 +29,11 @@
 }
 
 .btnSecondary {
+	@mixin btnSecondaryHover {
+		transform: translateY(-5px);
+		border: 1px solid colors.$color-primary;
+		color: colors.$color-primary;
+	}
 	&:link,
 	&:visited {
 		display: inline-block;
@@ -40,15 +45,23 @@
 		letter-spacing: 0.3rem;
 		animation: moveInBottom 1s ease-out;
 		transition: all 0.3s;
-		border: 1px solid colors.$color-white; 
+		border: 1px solid colors.$color-white;
 	}
 	&:active {
 		box-shadow: 0 0.5rem 1rem rgba(colors.$color-black, 0.15);
 		transform: translateY(5px);
 	}
 	&:hover {
-		transform: translateY(-5px);
-		border: 1px solid colors.$color-primary; 
-		color:  colors.$color-primary;
+		@include btnSecondaryHover;
+	}
+	&Inverse {
+		&:link,
+		&:visited {
+			color: colors.$color-black;
+			border: 1px solid colors.$color-black;
+		}
+		&:hover {
+			@include btnSecondaryHover;
+		}
 	}
 }

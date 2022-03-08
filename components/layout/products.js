@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useEffect, useState } from 'react'
 import styles from '../../styles/sass/layout/Products.module.scss'
 import Product from '../product'
@@ -7,23 +8,27 @@ export default function Products() {
     const [products, setProducts] = useState(allProduct);
 
     useEffect(() => {
+        const allButton = document.querySelector('.allButton');
+        allButton.focus();
+    }, []);
+
+    useEffect(() => {
         const abortCont = new AbortController();
         console.log(activeTab);
         activeTab == 'all' ? setProducts(allProduct) : setProducts(allProduct.filter(p => p.type == activeTab));
-        //console.log(products.filter(p => p.type == activeTab));
-        //setProducts(products.filter(p => p.type == activeTab));
         return () => abortCont.abort();
     }, [activeTab]);
 
     return (
         <div className={styles.products}>
             <div className={styles.productsHeading}>
+                <div className={[styles.lineAccent, styles.lineAccentLarge].join(' ')}></div>
                 <h2 className={styles.headingSecondary}>
                     Válogass boraink közül
                 </h2>
             </div>
             <div className={styles.productsNav}>
-                <button className={[styles.productsNavItem, { activeTab } == 'all' ? 'underline' : ''].join(' ')} onClick={() => setActiveTab('all')} >
+                <button className={[styles.productsNavItem, 'allButton', { activeTab } == 'all' ? 'underline' : ''].join(' ')} onClick={() => setActiveTab('all')} >
                     ÖSSZES BOR
                 </button>
                 <button className={[styles.productsNavItem, { activeTab } == 'red' ? 'underline' : ''].join(' ')} onClick={() => setActiveTab('red')}>
@@ -43,6 +48,13 @@ export default function Products() {
                 {products && products.map(product => (
                     <Product product={product} key={product.id} />
                 ))}
+            </div>
+            <div className={styles.btnCnt}>
+                <Link href="/termekek">
+                    <a className={[styles.btnSecondary, styles.btnSecondaryInverse].join(' ')}>
+                        ÖSSZES BOR MEGTEKINTÉSE
+                    </a>
+                </Link>
             </div>
         </div >
     )

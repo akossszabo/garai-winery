@@ -31,7 +31,7 @@ export default function AboutUs() {
                     Praesentium eveniet quo quis amet cupiditate nobis consectetur ipsam excepturi eius id porro voluptas tenetur dolor voluptatem ea, quasi veritatis, architecto debitis!
                 </p>
                 <div className={styles.btnCnt}>
-                    <Link href="/termekek">
+                    <Link href="/rolunk">
                         <a className={styles.btnSecondary}>
                             RÓLUNK
                         </a>
