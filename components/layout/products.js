@@ -26,15 +26,15 @@ export default function Products() {
                 <button className={[styles.productsNavItem, activeTab == 'all' ?  styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('all')} >
                     ÖSSZES BOR
                 </button>
-                <button className={[styles.productsNavItem, { activeTab } == 'red' ? 'underline' : ''].join(' ')} onClick={() => setActiveTab('red')}>
+                <button className={[styles.productsNavItem, { activeTab } == 'red' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('red')}>
                     <div className={[styles.productsNavItemDot, styles.productsNavItemDotRed].join(' ')}></div>
                     VÖRÖS
                 </button>
-                <button className={[styles.productsNavItem, { activeTab } == 'white' ? 'underline' : ''].join(' ')} onClick={() => setActiveTab('white')}>
+                <button className={[styles.productsNavItem, { activeTab } == 'white' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('white')}>
                     <div className={[styles.productsNavItemDot, styles.productsNavItemDotWhite].join(' ')}></div>
                     FEHÉR
                 </button>
-                <button className={[styles.productsNavItem, { activeTab } == 'rose' ? 'underline' : ''].join(' ')} onClick={() => setActiveTab('rose')}>
+                <button className={[styles.productsNavItem, { activeTab } == 'rose' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('rose')}>
                     <div className={[styles.productsNavItemDot, styles.productsNavItemDotRose].join(' ')}></div>
                     ROZÉ
                 </button>
