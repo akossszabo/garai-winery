@@ -5,16 +5,19 @@
 
 .services {
 	display: grid;
-	grid-template-columns: repeat(4, 20%);
+	grid-template-columns: 1fr;
 	justify-content: center;
 	align-items: center;
-    &Heading{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 4rem;
-        flex-direction: column;
-    }
+	text-align: center;
+	row-gap: 4rem;
+	&Heading {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 4rem;
+		flex-direction: column;
+	}
 	&Item {
 		display: flex;
 		justify-self: center;
@@ -27,12 +30,36 @@
 		gap: 2rem;
 		max-width: 24rem;
 		padding: 0.8rem;
-		&:hover {
-			/* transform: translateY(-1rem); */
-			/* box-shadow: 0 0.5rem 1rem rgba(colors.$color-black, 0.15); */
-		}
-        &Img{
-            
-        }
 	}
+}
+
+// ABOVE 544px (For smaller tablets)
+@media only screen and(min-width: 34em) {
+}
+
+// ABOVE 704px (For Tablets)
+@media only screen and(min-width: 44em) {
+	.services {
+		grid-template-columns: repeat(2, 40%);
+	}
+}
+// ABOVE 944px (For Landscape tablets)
+@media only screen and(min-width: 59em) {
+	/* .services {
+		grid-template-columns: repeat(4, 20%);
+	} */
+}
+
+// ABOVE 1200px (For smaller desktops)
+@media only screen and(min-width: 75em) {
+	.services {
+		grid-template-columns: repeat(4, 20%);
+	}
+}
+
+// ABOVE 1344px (For desktops)
+@media only screen and(min-width: 84em) {
+	/* .services {
+		grid-template-columns: repeat(4, 20%);
+	} */
 }

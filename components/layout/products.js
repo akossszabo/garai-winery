@@ -6,11 +6,11 @@ import Product from '../product'
 export default function Products() {
     const [activeTab, setActiveTab] = useState('all');
     const [products, setProducts] = useState(allProduct);
-
+    const sliceVal = 6;
     useEffect(() => {
         const abortCont = new AbortController();
         console.log(activeTab);
-        activeTab == 'all' ? setProducts(allProduct) : setProducts(allProduct.filter(p => p.type == activeTab));
+        activeTab == 'all' ? setProducts(allProduct.slice(0,sliceVal)) : setProducts(allProduct.filter(p => p.type == activeTab).slice(0,sliceVal));
         return () => abortCont.abort();
     }, [activeTab]);
 
@@ -23,7 +23,7 @@ export default function Products() {
                 </h2>
             </div>
             <div className={styles.productsNav}>
-                <button className={[styles.productsNavItem, 'allButton', { activeTab } == 'all' ? 'underline' : ''].join(' ')} onClick={() => setActiveTab('all')} >
+                <button className={[styles.productsNavItem, activeTab == 'all' ?  styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('all')} >
                     ÖSSZES BOR
                 </button>
                 <button className={[styles.productsNavItem, { activeTab } == 'red' ? 'underline' : ''].join(' ')} onClick={() => setActiveTab('red')}>
@@ -47,7 +47,7 @@ export default function Products() {
             <div className={styles.btnCnt}>
                 <Link href="/termekek">
                     <a className={[styles.btnSecondary, styles.btnSecondaryInverse].join(' ')}>
-                        ÖSSZES BOR MEGTEKINTÉSE
+                        ÖSSZES BOR
                     </a>
                 </Link>
             </div>
@@ -66,5 +66,6 @@ const allProduct = [
     { "id": 8, "name": "vörös4", "type": "red" },
     { "id": 9, "name": "vörös5", "type": "red" },
     { "id": 10, "name": "roze2", "type": "rose" },
-    { "id": 11, "name": "vörös6", "type": "red" }
+    { "id": 11, "name": "vörös6", "type": "red" },
+    { "id": 12, "name": "vörös7", "type": "red" }
 ];

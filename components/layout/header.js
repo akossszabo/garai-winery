@@ -18,7 +18,6 @@ export default function Header() {
                                 alt="Garai Pince logo"
                                 width="20"
                                 height="30"
-                                priority
                             />
                             <span className={styles.logoText}>
                                 GARAI PINCE
@@ -26,14 +25,14 @@ export default function Header() {
                         </>
                     </Link>
                 </span>
-                <Nav />
+                {/* <Nav /> */}
                 <span className={styles.cartIconContainer} onClick={() => setShowPopup(true)}>
                     <ion-icon name="bag-outline"></ion-icon>
                 </span>
             </header>
             <Popup show={showPopup} setShowPopup={setShowPopup}>
                 <div className="content">
-                    
+
                 </div>
             </Popup>
         </>

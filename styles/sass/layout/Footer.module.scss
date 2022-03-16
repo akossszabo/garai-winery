@@ -1,0 +1,9 @@
+@use '../abstracts/colors';
+
+.footer {
+	display: flex;
+	justify-content: center;
+	background-color: colors.$color-background-dark;
+	color: #fff;
+	padding: 16rem 0;
+}

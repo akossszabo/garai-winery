@@ -26,8 +26,8 @@ export default function Hero() {
                 <Image
                     src="/img/hero-wine.jpeg"
                     className={styles.heroImg}
-                    sizes='70vw'
-                    layout="fill"
+                    width={1240}
+                    height={768}
                     alt="Wines"
                 />
             </div>

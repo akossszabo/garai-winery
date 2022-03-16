@@ -1,13 +1,12 @@
 @use '../abstracts/colors';
 
 .header {
-	position: sticky;
 	display: grid;
-	grid-template-columns: 10% 80% 10%;
+	grid-template-columns: 20% 60% 20%;
 	justify-content: center;
 	align-items: center;
-	margin: 0 16rem;
 	padding: 3.2rem 0;
+	margin: 0 8rem;
 }
 
 .logo {
@@ -43,3 +42,4 @@
 		}
 	}
 }
+

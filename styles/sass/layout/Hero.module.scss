@@ -5,15 +5,17 @@
 @use '../components/button';
 
 .hero {
-	display: grid;
-	grid-template-columns: 40% 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-	grid-auto-flow: column;
-	gap: 8rem;
+	text-align: center;
+	gap: 4rem;
+	margin: 4rem;
 	&Text {
 		display: flex;
 		flex-direction: column;
-		gap: 8rem;
+		gap: 4rem;
 	}
 	&Img {
 		transition: all 0.3s ease-in-out;
@@ -21,10 +23,35 @@
 			transform: scale(1.1);
 		}
 		&Box {
-			position: relative;
-			overflow: hidden;
 			display: flex;
-			justify-content: flex-end;
 		}
 	}
+}
+
+// ABOVE 544px (For smaller tablets)
+@media only screen and(min-width: 34em) {
+}
+
+// ABOVE 704px (For Tablets)
+@media only screen and(min-width: 44em) {
+}
+// ABOVE 944px (For Landscape tablets)
+@media only screen and(min-width: 59em) {
+}
+
+// ABOVE 1200px (For smaller desktops)
+@media only screen and(min-width: 75em) {
+	.hero {
+		flex-direction: row;
+		gap: 8rem;
+		margin: 8rem;
+		&Text {
+			width: 60%;
+			gap: 8rem;
+		}
+	}
+}
+
+// ABOVE 1344px (For desktops)
+@media only screen and(min-width: 84em) {
 }

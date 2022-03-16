@@ -10,19 +10,25 @@
 	justify-content: center;
 	flex-direction: column;
 	gap: 4rem;
+	margin: 0 4rem;
 	&Heading {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 		gap: 4rem;
 	}
 	&Nav {
+		@mixin activeTab {
+			border-bottom: 1px solid colors.$color-primary;
+			box-shadow: inset 0 -10px 3px -10px colors.$color-primary;
+			margin-bottom: -1px;
+		}
 		display: flex;
+		flex-direction: column;
 		gap: 2rem;
-		/* margin: 2rem; */
-		padding: 0 16rem;
-		border-bottom: 1px solid #e6e6e6;
+		/* border-bottom: 1px solid #e6e6e6; */
 		box-sizing: border-box;
 		&Item {
 			display: flex;
@@ -31,9 +37,8 @@
 			justify-content: center;
 			align-items: center;
 			letter-spacing: 0.2rem;
-			padding: 4rem;
+			padding: 2rem;
 			box-sizing: border-box;
-			/* border-bottom: 1px solid #e6e6e6; */
 			&Dot {
 				border-radius: 50%;
 				width: 1.1rem;
@@ -50,16 +55,66 @@
 			}
 
 			&:active,
-			&:focus {
-				border-bottom: 1px solid colors.$color-primary;
-				box-shadow: inset 0 -10px 3px -10px colors.$color-primary;
-				margin-bottom: -1px;
+			&:focus,
+			&Underline {
+				@include activeTab;
 			}
 		}
 	}
+
 	&Grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 8rem;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 4rem;
+	}
+}
+
+.btnCnt {
+	font-size: 10px;
+}
+
+// ABOVE 544px (For smaller tablets)
+@media only screen and(min-width: 34em) {
+}
+
+// ABOVE 704px (For Tablets)
+@media only screen and(min-width: 44em) {
+	.products {
+		&Grid {
+			gap: 8rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&Nav {
+			/* padding: 0 16rem; */
+			flex-direction: row;
+			border-bottom: 1px solid #e6e6e6;
+			&Item {
+				padding: 4rem;
+			}
+		}
+	}
+}
+// ABOVE 944px (For Landscape tablets)
+@media only screen and(min-width: 59em) {
+}
+
+// ABOVE 1200px (For smaller desktops)
+@media only screen and(min-width: 75em) {
+}
+
+// ABOVE 1344px (For desktops)
+@media only screen and(min-width: 84em) {
+	.products {
+		&Grid {
+			gap: 8rem;
+			grid-template-columns: repeat(3, 1fr);
+		}
+		&Nav {
+			padding: 0 16rem;
+			flex-direction: row;
+			&Item {
+				padding: 4rem;
+			}
+		}
 	}
 }

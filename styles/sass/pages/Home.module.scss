@@ -7,13 +7,53 @@
 }
 
 .sectionServices {
-	margin: 16rem 0;
+	margin: 8rem 0;
 }
 
 .sectionAboutUs {
-	margin: 16rem 0;
+	margin: 8rem 0;
 }
 
 .sectionProducts {
-	margin: 16rem 0;
+	margin: 8rem 0;
+}
+.sectionArticles {
+	margin: 8rem 0;
+}
+
+// ABOVE 544px (For smaller tablets)
+@media only screen and(min-width: 34em) {
+}
+
+// ABOVE 704px (For Tablets)
+@media only screen and(min-width: 44em) {
+	.sectionHero {
+		margin: 8rem 0;
+	}
+	
+	.sectionServices {
+		margin: 16rem 0;
+	}
+	
+	.sectionAboutUs {
+		margin: 16rem 0;
+	}
+	
+	.sectionProducts {
+		margin: 16rem 0;
+	}
+	.sectionArticles {
+		margin: 16rem 0;
+	}
+}
+// ABOVE 944px (For Landscape tablets)
+@media only screen and(min-width: 59em) {
+}
+
+// ABOVE 1200px (For smaller desktops)
+@media only screen and(min-width: 75em) {
+}
+
+// ABOVE 1344px (For desktops)
+@media only screen and(min-width: 84em) {
 }

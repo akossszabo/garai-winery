@@ -9,8 +9,8 @@ export default function Product({ product }) {
             <Image
                 src="/img/wine-1.jpeg"
                 className={styles.heroImg}
-                width={405}
-                height={560}
+                width={350}
+                height={500}
                 alt="Wines"
             />
             <p className={styles.paragraph}>

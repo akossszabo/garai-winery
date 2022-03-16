@@ -5,7 +5,7 @@
 
 	&List {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		width: auto;
 		justify-content: center;
 		align-items: center;
@@ -30,6 +30,17 @@
 					transform: rotate(180deg);
 				}
 			}
+		}
+	}
+}
+
+@media only screen and (min-width: 860px) {
+	.mainNav {
+		/* color: colors.$color-grey-dark; */
+	
+		&List {
+			/* display: flex; */
+			flex-direction: row;
 		}
 	}
 }

@@ -1,5 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 class GaraiWinery extends Document {
+
     static async getInitialProps(ctx) {
         return await Document.getInitialProps(ctx)
     }
@@ -9,7 +10,7 @@ class GaraiWinery extends Document {
             <Html lang="hu-HU">
                 <Head>
                     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet"></link>
-                    
+                    <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <body>
                     <Main />

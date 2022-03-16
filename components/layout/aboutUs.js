@@ -5,22 +5,6 @@ import styles from '../../styles/sass/layout/AboutUs.module.scss'
 export default function AboutUs() {
     return (
         <div className={styles.aboutUs}>
-            <div className={styles.aboutUsComposition}>
-                <div className={[styles.aboutUsCompositionImg, styles.aboutUsCompositionImgFront].join(' ')}>
-                    <Image
-                        src="/img/comp-1.jpeg"
-                        alt="Garai Pince"
-                        width="400"
-                        height="250" />
-                </div>
-                <div className={[styles.aboutUsCompositionImg, styles.aboutUsCompositionImgBack].join(' ')}>
-                    <Image
-                        src="/img/comp-1.jpeg"
-                        alt="Garai Pince"
-                        width="400"
-                        height="250" />
-                </div>
-            </div>
             <div className={styles.aboutUsDescription}>
                 <div className={[styles.lineAccent].join(' ')}></div>
                 <h2 className={styles.headingSecondary}>
@@ -36,6 +20,17 @@ export default function AboutUs() {
                             RÓLUNK
                         </a>
                     </Link>
+                </div>
+            </div>
+            <div className={styles.aboutUsComposition}>
+                <div className={[styles.aboutUsCompositionImg, styles.aboutUsCompositionImgFront].join(' ')}>
+                    <Image
+                        src="/img/comp-1.jpeg"
+                        alt="Garai Pince"
+                        width={400}
+                        height={250}
+                        layout='responsive' />
+
                 </div>
             </div>
         </div>
