@@ -10,7 +10,7 @@ export default function Products() {
     useEffect(() => {
         const abortCont = new AbortController();
         console.log(activeTab);
-        activeTab == 'all' ? setProducts(allProduct.slice(0,sliceVal)) : setProducts(allProduct.filter(p => p.type == activeTab).slice(0,sliceVal));
+        activeTab == 'all' ? setProducts(allProduct.slice(0, sliceVal)) : setProducts(allProduct.filter(p => p.type == activeTab).slice(0, sliceVal));
         return () => abortCont.abort();
     }, [activeTab]);
 
@@ -23,18 +23,18 @@ export default function Products() {
                 </h2>
             </div>
             <div className={styles.productsNav}>
-                <button className={[styles.productsNavItem, activeTab == 'all' ?  styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('all')} >
+                <button className={[styles.productsNavItem, activeTab == 'all' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('all')} tabIndex='0'>
                     ÖSSZES BOR
                 </button>
-                <button className={[styles.productsNavItem, { activeTab } == 'red' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('red')}>
+                <button className={[styles.productsNavItem, { activeTab } == 'red' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('red')} tabIndex='1'>
                     <div className={[styles.productsNavItemDot, styles.productsNavItemDotRed].join(' ')}></div>
                     VÖRÖS
                 </button>
-                <button className={[styles.productsNavItem, { activeTab } == 'white' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('white')}>
+                <button className={[styles.productsNavItem, { activeTab } == 'white' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('white')} tabIndex='2'>
                     <div className={[styles.productsNavItemDot, styles.productsNavItemDotWhite].join(' ')}></div>
                     FEHÉR
                 </button>
-                <button className={[styles.productsNavItem, { activeTab } == 'rose' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('rose')}>
+                <button className={[styles.productsNavItem, { activeTab } == 'rose' ? styles.productsNavItemUnderline : ''].join(' ')} onClick={() => setActiveTab('rose')} tabIndex='3'>
                     <div className={[styles.productsNavItemDot, styles.productsNavItemDotRose].join(' ')}></div>
                     ROZÉ
                 </button>
