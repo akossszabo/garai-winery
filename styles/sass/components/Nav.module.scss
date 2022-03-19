@@ -2,14 +2,13 @@
 
 .mainNav {
 	color: colors.$color-grey-dark;
-
 	&List {
 		display: flex;
 		flex-direction: column;
 		width: auto;
 		justify-content: center;
 		align-items: center;
-		font-size: 1.4rem;
+		font-size: 1.8rem;
 		gap: 4rem;
 		letter-spacing: 0.1rem;
 
@@ -34,13 +33,27 @@
 	}
 }
 
-@media only screen and (min-width: 860px) {
+// ABOVE 544px (For smaller tablets)
+@media only screen and(min-width: 34em) {
+}
+
+// ABOVE 704px (For Tablets)
+@media only screen and(min-width: 44em) {
+}
+// ABOVE 944px (For Landscape tablets)
+@media only screen and(min-width: 59em) {
+}
+
+// ABOVE 1200px (For smaller desktops)
+@media only screen and(min-width: 75em) {
 	.mainNav {
-		/* color: colors.$color-grey-dark; */
-	
 		&List {
-			/* display: flex; */
 			flex-direction: row;
+			font-size: 1.4rem;
 		}
 	}
+}
+
+// ABOVE 1344px (For desktops)
+@media only screen and(min-width: 84em) {
 }
