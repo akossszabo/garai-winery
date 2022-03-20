@@ -2,16 +2,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Popup from '../popup'
 import Nav from '../nav'
+import MobileMenu from '../mobileMenu'
 import styles from '../../styles/sass/layout/Header.module.scss'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import useWindowSize from '../util/useWindowSize'
 
 export default function Header() {
     const [showPopup, setShowPopup] = useState(false);
-    const [mobilMenuClass, setMobilMenuClass] = useState('');
-
-    const [width, setWidth] = useState(0);
-    const updateWidth = () => setWidth(window.innerWidth);
-    useEffect(() => (window.onresize = updateWidth), []);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
+    const size = useWindowSize();
 
     return (
         <>
@@ -31,20 +30,18 @@ export default function Header() {
                         </>
                     </Link>
                 </span>
-                {width >= 1200 && <Nav />}
+                {size.width >= 1200 && <Nav />}
                 <span className={styles.cartIconContainer} onClick={() => setShowPopup(true)}>
                     <ion-icon name="bag-outline"></ion-icon>
                 </span>
-                {width < 1200 &&
+                {size.width < 1200 &&
                     <>
                         <div className={styles.mobileMenuBtnContainer}>
-                            <div class={[styles.menuBtn, mobilMenuClass].join(' ')} onClick={() => mobilMenuClass ? setMobilMenuClass('') : setMobilMenuClass(styles.open)}>
+                            <div class={`${styles.menuBtn} ${showMobileMenu ? styles.open : ''}`} onClick={() => showMobileMenu ? setShowMobileMenu(false) : setShowMobileMenu(true)}>
                                 <div class={styles.menuBtnBurger}></div>
                             </div>
                         </div>
-                        <div className={[styles.mobileMenu, mobilMenuClass].join(' ')}>
-                            <Nav />
-                        </div>
+                        <MobileMenu show={showMobileMenu}></MobileMenu>
                     </>
                 }
             </header>
