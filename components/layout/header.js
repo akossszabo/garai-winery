@@ -37,8 +37,8 @@ export default function Header() {
                 {size.width < 1200 &&
                     <>
                         <div className={styles.mobileMenuBtnContainer}>
-                            <div class={`${styles.menuBtn} ${showMobileMenu ? styles.open : ''}`} onClick={() => showMobileMenu ? setShowMobileMenu(false) : setShowMobileMenu(true)}>
-                                <div class={styles.menuBtnBurger}></div>
+                            <div className={`${styles.menuBtn} ${showMobileMenu ? styles.open : ''}`} onClick={() => showMobileMenu ? setShowMobileMenu(false) : setShowMobileMenu(true)}>
+                                <div className={styles.menuBtnBurger}></div>
                             </div>
                         </div>
                         <MobileMenu show={showMobileMenu}></MobileMenu>

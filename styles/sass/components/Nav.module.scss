@@ -1,5 +1,5 @@
 @use '../abstracts/colors';
-
+@use '../base/animations';
 .mainNav {
 	color: colors.$color-grey-dark;
 	&List {
@@ -17,16 +17,39 @@
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
-
+			position: relative;
+			flex-direction: column;
 			& ion-icon {
 				transition: all 0.3s ease-out;
 			}
-
-			&:hover {
+			&Active {
 				color: colors.$color-primary;
-
 				& ion-icon {
 					transform: rotate(180deg);
+				}
+			}
+
+			& > span {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			& > .subMenu {
+				display: none;
+				padding: 4rem;
+				z-index: 100;
+				top: 5rem;
+				border: 1px solid colors.$color-grey-dark;
+				margin: 4rem 0 0 0;
+				/* transition: all 0.3s ease-out; */
+				/* opacity: 0; */
+				/* transform: translateY(-100px); */
+				&.open {
+					display: block;
+					animation: moveInTop 1s forwards;
+					/* opacity: 1;
+					transform: translateY(0); */
 				}
 			}
 		}
@@ -50,6 +73,16 @@
 		&List {
 			flex-direction: row;
 			font-size: 1.4rem;
+			&Item {
+				position: relative;
+				&:hover {
+					color: colors.$color-primary;
+				}
+				& > .subMenu {
+					margin: 0;
+					position: absolute;
+				}
+			}
 		}
 	}
 }

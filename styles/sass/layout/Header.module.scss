@@ -55,7 +55,7 @@
 	&Burger {
 		width: 2.4rem;
 		height: 2px;
-		background: colors.$color-background-dark;
+		background: colors.$color-grey-dark;
 		border-radius: 5px;
 		box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
 		transition: all 0.5s ease-in-out;
@@ -66,7 +66,7 @@
 			position: absolute;
 			width: 2.4rem;
 			height: 2px;
-			background: colors.$color-background-dark;
+			background: colors.$color-grey-dark;
 			border-radius: 5px;
 			box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
 			transition: all 0.5s ease-in-out;
